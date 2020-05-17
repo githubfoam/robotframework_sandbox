@@ -42,10 +42,10 @@ jobs:
           # - sudo vagrant up
           - sudo vagrant status
           - sudo vagrant global-status
-          - sudo vagrant ssh master -c "sudo python ~/webdemo/demoapp/server.py > /dev/null 2>&1"
-          - sudo vagrant ssh master -c "cd ~/webdemo && sudo python -m SimpleHTTPServer 8000 > /dev/null 2>&1"
-          - sudo vagrant ssh master -c "cd ~/webdemo && sudo robot login_tests"
-          - sudo vagrant ssh master -c "curl http://localhost:8000/report.html"
+          # - sudo vagrant ssh master -c "sudo python ~/webdemo/demoapp/server.py > /dev/null 2>&1"
+          # - sudo vagrant ssh master -c "cd ~/webdemo && sudo python -m SimpleHTTPServer 8000 > /dev/null 2>&1"
+          # - sudo vagrant ssh master -c "cd ~/webdemo && sudo robot login_tests"
+          # - sudo vagrant ssh master -c "curl http://localhost:8000/report.html"
           - sudo virsh list --all #show all running KVM/libvirt VMs
 after_success:
     - stage: Finalize
