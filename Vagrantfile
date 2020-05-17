@@ -3,7 +3,7 @@
 Vagrant.configure("2") do |config|
 
   config.vm.define "master" do |master|
-    master.vm.box = "bento/ubuntu-16.04"
+    master.vm.box = "bento/ubuntu-19.10"
     master.vm.hostname = "master"
     master.vm.network "private_network", ip: "172.16.1.11"
     master.vm.provider "virtualbox" do |vb|
