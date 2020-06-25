@@ -2,7 +2,7 @@
 Robot Framework  robotic process automation (RPA)
 
 Travis (.com) dev branch:
-[![Build Status](https://travis-ci.com/githubfoam/lustre-sandbox.svg?branch=master)](https://travis-ci.com/githubfoam/lustre-sandbox)  
+[![Build Status](https://travis-ci.com/githubfoam/robotframework_sandbox.svg?branch=master)](https://travis-ci.com/githubfoam/robotframework_sandbox)  
 
 ~~~~
 
