@@ -1,5 +1,4 @@
 language: ruby
-# dist: xenial #16.04
 dist: bionic #18.04
 sudo: required
 rvm:
@@ -16,43 +15,9 @@ jobs:
           - sudo make deploy-libvirt
           - sudo make deploy-vagrant
           - sudo make deploy-boxes
-          # - sudo apt-get install -y cpu-checker bridge-utils dnsmasq-base ebtables libvirt-bin libvirt-dev qemu-kvm qemu-utils ruby-dev
-          # - sudo systemctl status libvirtd
-          # - sudo libvirtd --version
-          # - egrep -c '(vmx|svm)' /proc/cpuinfo #If 0 it means that your CPU doesn't support hardware virtualization.If 1 or more it does - but you still need to make sure that virtualization is enabled in the BIOS.
-          # - sudo addgroup libvirtd
-          # - sudo adduser  $(id -un) libvirtd #ensure that your username is added to the group libvirtd
-          # - sudo kvm-ok
-          # - echo "============================================="
-          # - echo "=============Installing Vagrant=============="
-          # - sudo wget -nv https://releases.hashicorp.com/vagrant/${VAGRANT_VERSION}/vagrant_${VAGRANT_VERSION}_x86_64.deb
-          # - sudo dpkg -i vagrant_${VAGRANT_VERSION}_x86_64.deb
-          # - vagrant version
-          # - echo "============================================="
-          # - sudo vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required when using KVM on Linux
-          # - sudo vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
-          # - sudo vagrant status
-          # - sudo virsh list --all #show all running KVM/libvirt VMs
-          # # - sudo vagrant box add "debian/stretch64"
-          # - sudo vagrant box add "bento/ubuntu-19.10"  --provider=virtualbox
-          # - sudo vagrant mutate "bento/ubuntu-19.10" libvirt
-          # - vagrant box list #veridy installed boxes
-          # - vagrant status #Check the status of the VMs to see that none of them have been created yet
-          # - sudo vagrant up --provider=libvirt
-          # # - sudo vagrant up --provider=libvirt master node1 node2
-          # # - sudo vagrant up --no-parallel --provider=libvirt # vagrant serial runs
-          # # - travis_wait 30 sudo vagrant up --provider=libvirt
-          # # - sudo vagrant up
-          # - sudo vagrant status
-          # - sudo vagrant global-status
-          # # - sudo vagrant ssh master -c "sudo python ~/webdemo/demoapp/server.py > /dev/null 2>&1"
-          # # - sudo vagrant ssh master -c "cd ~/webdemo && sudo python -m SimpleHTTPServer 8000 > /dev/null 2>&1"
-          # # - sudo vagrant ssh master -c "cd ~/webdemo && sudo robot login_tests"
-          # # - sudo vagrant ssh master -c "curl http://localhost:8000/report.html"
-          # - sudo virsh list --all #show all running KVM/libvirt VMs
-after_success:
-    - stage: Finalize
-      script: sudo vagrant destroy -f
+      after_success:
+          - stage: Finalize
+            script: sudo vagrant destroy -f
 notifications:
   #email: false
    email:
