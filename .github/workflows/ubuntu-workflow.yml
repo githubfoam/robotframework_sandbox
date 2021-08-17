@@ -25,7 +25,7 @@ jobs:
         pip install robotframework   
         # Upgrade to the latest stable version. This is the most common method.
         pip install --upgrade robotframework
-        Verifying installation
+        # Verifying installation
         robot --version
         rebot --version
     # Both of these commands are installed as part of the normal installation and can be executed directly from the command line if PATH is set correctly.
