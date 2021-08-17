@@ -19,7 +19,7 @@ jobs:
     - name: "os fingerprinting"
       run: hostnamectl status          
     - name: "Installing with pip "
-      run: pip install robotframework   
+      run: pip install --upgrade pip && pip install robotframework   
    
 
   ubuntu-1804-job:
