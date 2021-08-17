@@ -19,7 +19,16 @@ jobs:
     - name: "os fingerprinting"
       run: hostnamectl status          
     - name: "Installing with pip "
-      run: pip install --upgrade pip && pip install robotframework   
+      run: |
+        # pip install --upgrade pip 
+        pip install robotframework   
+        # Upgrade to the specified version.
+        # pip install robotframework==4.0.3
+        # Upgrade to the latest stable version. This is the most common method.
+        pip install --upgrade robotframework
+        robot tests.robot
+        rebot output.xml
+
    
 
   ubuntu-1804-job:
