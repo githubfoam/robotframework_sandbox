@@ -27,7 +27,7 @@ jobs:
         pip install --upgrade robotframework
         # Verifying installation
         robot --version
-        rebot --version
+        # rebot --version
     # Both of these commands are installed as part of the normal installation and can be executed directly from the command line if PATH is set correctly.
     # obot Framework tests are executed using the robot command and results post-processed with the rebot command:
     # - name: "Executing Robot Framework - Using robot and rebot commands "
