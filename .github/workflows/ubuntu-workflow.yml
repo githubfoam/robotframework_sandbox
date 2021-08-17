@@ -10,7 +10,7 @@ on:
 
 jobs:
      
-
+# https://github.com/robotframework/robotframework/blob/master/INSTALL.rst
   ubuntu-1604-job:
     name: "Robot Framework on ubuntu-16.04"
     runs-on: ubuntu-16.04
@@ -21,13 +21,25 @@ jobs:
     - name: "Installing with pip "
       run: |
         # pip install --upgrade pip 
+        Install the latest version (does not upgrade)
         pip install robotframework   
-        # Upgrade to the specified version.
-        # pip install robotframework==4.0.3
         # Upgrade to the latest stable version. This is the most common method.
         pip install --upgrade robotframework
+        # Verifying installation
+        robot --version
+        rebot --version
+    # Both of these commands are installed as part of the normal installation and can be executed directly from the command line if PATH is set correctly.
+    # obot Framework tests are executed using the robot command and results post-processed with the rebot command:
+    # - name: "Executing Robot Framework - Using robot and rebot commands "
+    #   run: |
+    #     # [ ERROR ] Parsing 'tests.robot' failed: File or directory to execute does not exist.
+    #     robot tests.robot
+    #     rebot output.xml        
+    # An alternative way to run tests is executing the installed robot module or its sub module robot.run directly using Python's -m command line option.         
+    - name: "Executing Robot Framework - Executing installed robot module "
+      run: |
         robot tests.robot
-        rebot output.xml
+        rebot output.xml         
 
    
 
