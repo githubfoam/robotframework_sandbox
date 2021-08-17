@@ -25,24 +25,7 @@ jobs:
         pip install robotframework   
         # Upgrade to the latest stable version. This is the most common method.
         pip install --upgrade robotframework
-        # http://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#return-codes
-        # Verifying installation
-        # robot --version
-        # echo $?
-        # rebot --version
-        # echo $?
-    # Both of these commands are installed as part of the normal installation and can be executed directly from the command line if PATH is set correctly.
-    # obot Framework tests are executed using the robot command and results post-processed with the rebot command:
-    # - name: "Executing Robot Framework - Using robot and rebot commands "
-    #   run: |
-    #     # [ ERROR ] Parsing 'tests.robot' failed: File or directory to execute does not exist.
-    #     robot tests.robot
-    #     rebot output.xml        
-    # An alternative way to run tests is executing the installed robot module or its sub module robot.run directly using Python's -m command line option.         
-    - name: "Executing Robot Framework - Executing installed robot module "
-      run: |
-        robot tests.robot
-        rebot output.xml         
+       
 
    
 
@@ -54,7 +37,12 @@ jobs:
     - name: "os fingerprinting"
       run: hostnamectl status  
     - name: "Installing with pip "
-      run: pip install robotframework    
+      run: |
+        # pip install --upgrade pip 
+        # Install the latest version (does not upgrade)
+        pip install robotframework   
+        # Upgrade to the latest stable version. This is the most common method.
+        pip install --upgrade robotframework  
 
   ubuntu-2004-job:
     name: "Robot Framework on ubuntu-20.04"
@@ -64,7 +52,12 @@ jobs:
     - name: "os fingerprinting"
       run: hostnamectl status
     - name: "Installing with pip "
-      run: pip install robotframework               
+      run: |
+        # pip install --upgrade pip 
+        # Install the latest version (does not upgrade)
+        pip install robotframework   
+        # Upgrade to the latest stable version. This is the most common method.
+        pip install --upgrade robotframework           
 
 
   ubuntu-latest-job:
@@ -75,4 +68,9 @@ jobs:
     - name: "os fingerprinting"
       run: hostnamectl status 
     - name: "Installing with pip "
-      run: pip install robotframework                  
+      run: |
+        # pip install --upgrade pip 
+        # Install the latest version (does not upgrade)
+        pip install robotframework   
+        # Upgrade to the latest stable version. This is the most common method.
+        pip install --upgrade robotframework             
